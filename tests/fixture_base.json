@@ -4,20 +4,20 @@
     "email": null,
     "phone": null,
     "url": "http: //example.com/push/",
-    "type": "post",
+    "type": "post"
     },
     {
     "name": "John Doe 2",
     "email": "doe@example.com",
     "phone": null,
     "url": "http: //example.com",
-    "type": "email",
+    "type": "email"
     },
     {
     "name": "John Doe 3",
     "email": null,
     "phone": "+34692018264",
     "url": null,
-    "type": "sms",
+    "type": "sms"
     }
 ]
