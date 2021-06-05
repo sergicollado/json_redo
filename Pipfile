@@ -9,6 +9,7 @@ pytest = "*"
 pytest-mock = "*"
 pylint = "*"
 ijson = "*"
+frozendict = "*"
 
 [dev-packages]
 yapf = "*"

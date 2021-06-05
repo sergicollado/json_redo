@@ -1,0 +1,44 @@
+[
+  {
+    "name": "John Doe 1",
+    "email": null,
+    "phone": null,
+    "url": "http: //example.com/push/",
+    "type": "post"
+  },
+  {
+    "name": "John Doe 2",
+    "email": "doe@example.com",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+  },
+  {
+    "name": "John Doe 3",
+    "email": null,
+    "phone": "+34692018264",
+    "url": null,
+    "type": "sms"
+  },
+  {
+    "name": "John Doe 4",
+    "email": null,
+    "phone": null,
+    "url": "http: //example.com/push/4",
+    "type": "post"
+  },
+  {
+    "name": "John Doe 5",
+    "email": "doe@example.com5",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+  },
+  {
+    "name": "John Doe 6",
+    "email": null,
+    "phone": "+346920182646",
+    "url": null,
+    "type": "sms"
+  }
+]

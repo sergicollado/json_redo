@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "844e90146c6adc1f07a464ce3421a195fec83d401824b914070ce1a8f4101081"
+            "sha256": "fa2f1c7609aa02133e854892a41e5558afcab519f19797571ee3ca27a5ad98bb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -46,6 +46,13 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==4.0.0"
+        },
+        "frozendict": {
+            "hashes": [
+                "sha256:4d5a25859bfeb1dadcf4e41f8a8a528f6cbe8271ae471e9a9b973524e7188524"
+            ],
+            "index": "pypi",
+            "version": "==2.0.2"
         },
         "idna": {
             "hashes": [
