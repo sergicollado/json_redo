@@ -11,8 +11,17 @@ def input_json():
     json_file.close()
 
 
-def test_from_enter_json_must_call_proper_message_client_method(input_json):
-    
+def test_should_send_post_message(input_json):
     MessageClient.send_post = Mock()
     json_processor(input_json)
     MessageClient.send_post.assert_called()
+
+def test_should_send_sms_message(input_json):
+    MessageClient.send_sms = Mock()
+    json_processor(input_json)
+    MessageClient.send_sms.assert_called()
+
+def test_should_send_email_message(input_json):
+    MessageClient.send_email = Mock()
+    json_processor(input_json)
+    MessageClient.send_email.assert_called()
