@@ -4,6 +4,7 @@ import ijson
 from message_client import MessageClient
 from validators.email_notification_validator import EmailNotificationValidator
 from validators.exceptions import BadParametersError
+from validators.general_notification_validator import GeneralNotificationValidator
 from validators.post_notification_validator import PostNotificationValidator
 from validators.sms_notification_validator import SmsNotificationValidator
 
@@ -24,6 +25,7 @@ class JsonProcessor:
         if self.processed_data_repository.is_already_processed(index):
             return
         try:
+            GeneralNotificationValidator().validate(log_to_notify)
             notification_sender = self.notification_sender_factory.get_sender(log_to_notify['type'])
             notification_sender.send(log_to_notify)
         except BadParametersError as e:
