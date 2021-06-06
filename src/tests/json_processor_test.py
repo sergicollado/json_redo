@@ -12,7 +12,7 @@ def json_processor():
 
 @pytest.fixture
 def input_json():
-    filename = 'tests/fixture_base.json'
+    filename = 'src/tests/fixture_base.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()

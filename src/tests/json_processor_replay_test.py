@@ -23,7 +23,7 @@ def json_processor(message_client, processed_repository):
 
 @pytest.fixture
 def prepocessed_json():
-    filename = 'tests/fixture_base.json'
+    filename = 'src/tests/fixture_base.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
@@ -31,7 +31,7 @@ def prepocessed_json():
 
 @pytest.fixture
 def to_process_json():
-    filename = 'tests/fixture_base_extended.json'
+    filename = 'src/tests/fixture_base_extended.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
