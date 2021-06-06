@@ -9,9 +9,11 @@ def main():
     
     repository = ProcessedDataRepository()
 
-    with urllib.request.urlopen(url) as f:
-        JsonProcessor(MessageClient, repository).process(f)
-
+    try:
+        with urllib.request.urlopen(url) as f:
+            JsonProcessor(MessageClient, repository).process(f)
+    except Exception as e:
+        print(f'Something wrong happened: {e}')
 
 if __name__ == '__main__':
     main()
