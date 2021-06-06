@@ -1,5 +1,6 @@
 import pytest
 from unittest.mock import Mock
+from domain.exceptions import InputDataError
 from infraestructure.message_client import MessageClient
 from application_layer.json_processor import JsonProcessor
 from infraestructure.processed_data_repository import ProcessedDataRepository
@@ -17,6 +18,12 @@ def input_json():
     yield json_file
     json_file.close()
 
+
+@pytest.fixture
+def error_input_json():
+    filename = 'src/tests/fixture_bad_format.json'
+    json_file = open(filename, "rb")
+    yield json_file
 
 def test_should_send_post_message_with_proper_params(input_json, json_processor):
     MessageClient.send_post = Mock()
@@ -61,3 +68,7 @@ def test_should_send_email_message_with_proper_params(input_json, json_processor
     "type": "email"
     }
     MessageClient.send_email.assert_called_once_with(expected_email, expected_data)
+
+def test_should_raise_input_data_error_if_json_has_not_a_proper_format(error_input_json, json_processor):
+    with pytest.raises(InputDataError):
+        json_processor.process(error_input_json)

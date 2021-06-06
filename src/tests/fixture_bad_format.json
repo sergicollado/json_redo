@@ -1,0 +1,15 @@
+[
+    {
+    "name": "John Doe 1",
+    "email": null,
+    "phone": null,
+    "url": "http: //example.com/push/",
+    "type": "post"
+    },
+    {
+    "name": "John Doe 2",
+    "email": "doe@example.com",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+    },

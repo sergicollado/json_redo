@@ -1,6 +1,8 @@
+from domain.exceptions import InputDataError
 from domain.notification_sender_factory import NotificationSenderFactory
 from infraestructure.processed_data_repository import ProcessedDataRepository
 import ijson
+from ijson.common import JSONError
 from infraestructure.message_client import MessageClient
 from domain.validators.email_notification_validator import EmailNotificationValidator
 from domain.validators.exceptions import BadParametersError
@@ -18,9 +20,12 @@ class JsonProcessor:
         self.notification_sender_factory = NotificationSenderFactory(self.message_client)
 
     def process(self, json):
-        for index, log_to_notify in enumerate(ijson.items(json, 'item')):
-            self._send_notification(index, log_to_notify)
-
+        try:
+            for index, log_to_notify in enumerate(ijson.items(json, 'item')):
+                self._send_notification(index, log_to_notify)
+        except JSONError as e:
+            raise InputDataError(e)
+    
     def _send_notification(self, index: int, log_to_notify) -> None:
         if self.processed_data_repository.is_already_processed(index):
             return

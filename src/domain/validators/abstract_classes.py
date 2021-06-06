@@ -15,4 +15,4 @@ class NotificationValidator(metaclass=ABCMeta):
             if not required in data or not data[required]:
                 errors.append(required)
         if errors:
-            raise BadParametersError(self.__class__, errors, data)
+            raise BadParametersError(self.__class__.__name__, errors, data)
