@@ -1,9 +1,9 @@
 import pytest
 from unittest.mock import MagicMock, Mock
-from message_client import MessageClient
-from json_processor import JsonProcessor
-from validators.exceptions import BadParametersError
-from processed_data_repository import ProcessedDataRepository
+from infraestructure.message_client import MessageClient
+from application_layer.json_processor import JsonProcessor
+from domain.validators.exceptions import BadParametersError
+from infraestructure.processed_data_repository import ProcessedDataRepository
 
 
 

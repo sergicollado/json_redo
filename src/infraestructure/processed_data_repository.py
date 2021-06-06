@@ -1,7 +1,10 @@
 
 
 
-class ProcessedDataRepository:
+from domain.processed_data_repository_abstract import ProcessedDataRepositoryAbstract
+
+
+class ProcessedDataRepository(ProcessedDataRepositoryAbstract):
     data = []
     invalid_items = []
 
@@ -19,6 +22,5 @@ class ProcessedDataRepository:
         self.invalid_items.append(data_with_index)
 
     def get_invalid_item(self, index: int) -> dict:
-        print(self.invalid_items)
         item =  [item for item in self.invalid_items if item['index'] == index]
         return item[0]

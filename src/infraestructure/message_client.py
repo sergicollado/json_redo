@@ -1,4 +1,7 @@
-class MessageClient:
+from domain.message_client_abstract import MessageClientAbstract
+
+
+class MessageClient(MessageClientAbstract):
     def send_post(url: str, data: dict) -> None:
         print(f"SMS sent to {url}. Data: {data}")
     

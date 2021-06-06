@@ -1,5 +1,5 @@
-from validators.exceptions import BadParametersError
-from validators.abstract_classes import NotificationValidator 
+from domain.validators.exceptions import BadParametersError
+from domain.validators.abstract_classes import NotificationValidator 
 
 
 class PostNotificationValidator(NotificationValidator):    

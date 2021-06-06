@@ -1,7 +1,7 @@
 from abc import abstractmethod, abstractstaticmethod
 from abc import ABCMeta
 
-from validators.exceptions import BadParametersError
+from domain.validators.exceptions import BadParametersError
 
 class NotificationValidator(metaclass=ABCMeta):
     @property
