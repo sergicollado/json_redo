@@ -1,0 +1,1 @@
+from .post_notification_validator import NotificationValidator

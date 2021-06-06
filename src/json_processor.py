@@ -1,6 +1,7 @@
 from processed_data_repository import ProcessedDataRepository
 import ijson
 from message_client import MessageClient
+from validators.post_notification_validator import PostNotificationValidator
 
 class JsonProcessor:
     def __init__(self, message_client: MessageClient, processed_data_repository: ProcessedDataRepository) -> None:
@@ -13,9 +14,7 @@ class JsonProcessor:
 
     def send_notification(self, index: int, log_to_notify) -> None:
         if self.processed_data_repository.is_already_processed(index):
-            print(f'ALREADY PROCESSED {index}')
             return
-        print(f'TO PROCESS {index}')
         self.process_post(log_to_notify)
         self.process_sms(log_to_notify)
         self.process_email(log_to_notify)
@@ -24,6 +23,7 @@ class JsonProcessor:
     def process_post(self, data: dict) -> None:
         if data['type'] != 'post':
             return
+        PostNotificationValidator().validate(data)
         self.message_client.send_post(data['url'], data)
 
     def process_sms(self, data: dict) -> None:
