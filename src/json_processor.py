@@ -1,8 +1,10 @@
 from processed_data_repository import ProcessedDataRepository
 import ijson
 from message_client import MessageClient
+from validators.email_notification_validator import EmailNotificationValidator
 from validators.exceptions import BadParametersError
 from validators.post_notification_validator import PostNotificationValidator
+from validators.sms_notification_validator import SmsNotificationValidator
 
 
 class JsonProcessor:
@@ -36,9 +38,11 @@ class JsonProcessor:
     def process_sms(self, data: dict) -> None:
         if data['type'] != 'sms':
             return
+        SmsNotificationValidator().validate(data)
         self.message_client.send_sms(data['phone'], data)
 
     def process_email(self, data: dict) -> None:
         if data['type'] != 'email':
             return
+        EmailNotificationValidator().validate(data)
         self.message_client.send_email(data['email'], data)

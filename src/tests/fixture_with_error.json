@@ -21,21 +21,42 @@
     "type": "sms"
   },
   {
-    "name": "John Doe 4",
+    "name": "",
+    "email": null,
+    "phone": null,
+    "url": "http: //example.com/push/without-name",
+    "type": "post"
+  },
+  {
+    "name": "",
+    "email": "doe@example.without.name.com",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+  },
+  {
+    "name": "",
+    "email": null,
+    "phone": "phone withot name",
+    "url": null,
+    "type": "sms"
+  },
+  {
+    "name": "proper post",
     "email": null,
     "phone": null,
     "url": "http: //example.com/push/4",
     "type": "post"
   },
   {
-    "name": "John Doe 5",
+    "name": "proper email",
     "email": "doe@example.com5",
     "phone": null,
     "url": "http: //example.com",
     "type": "email"
   },
   {
-    "name": "John Doe 6",
+    "name": "proper sms",
     "email": null,
     "phone": "+346920182646",
     "url": null,

@@ -11,8 +11,6 @@ class NotificationValidator(metaclass=ABCMeta):
     
     def validate(self, data: dict) -> None:
         errors = []
-        print('REQUIRED PARAMS')
-        print(self.required_params)
         for required in self.required_params:
             if not required in data or not data[required]:
                 errors.append(required)
