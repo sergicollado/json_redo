@@ -5,8 +5,10 @@ from domain.processed_data_repository_abstract import ProcessedDataRepositoryAbs
 
 
 class ProcessedDataRepository(ProcessedDataRepositoryAbstract):
-    data = []
-    invalid_items = []
+    def __init__(self) -> None:
+        super().__init__()
+        self.data = []
+        self.invalid_items = []
 
     def append(self, index: int) -> None:
         self.data.append(index)

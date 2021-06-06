@@ -22,7 +22,7 @@ def json_processor(message_client, processed_repository):
 
 
 @pytest.fixture
-def prepocessed_json():
+def preprocessed_json():
     filename = 'src/tests/fixtures/fixture_base.json'
     json_file = open(filename, "rb")
     yield json_file
@@ -37,23 +37,23 @@ def to_process_json():
     json_file.close()
 
 
-def test_should_save_index_of_already_process_data(prepocessed_json,
+def test_should_save_index_of_already_process_data(preprocessed_json,
                                                    json_processor,
                                                    processed_repository):
-    json_processor.process(prepocessed_json)
+    json_processor.process(preprocessed_json)
 
-    expeced_processed_range = 3
+    expected_processed_range = 3
 
-    for i in range(expeced_processed_range):
+    for i in range(expected_processed_range):
         assert processed_repository.is_already_processed(i)
 
 
 def test_processed_data_repository_should_return_false_if_ask_for_a_not_processed_data(
-        prepocessed_json, json_processor, processed_repository):
-    json_processor.process(prepocessed_json)
-    expeced_not_processed_index = 4
+        preprocessed_json, json_processor, processed_repository):
+    json_processor.process(preprocessed_json)
+    expected_not_processed_index = 4
     is_processed = processed_repository.is_already_processed(
-        expeced_not_processed_index)
+        expected_not_processed_index)
     assert not is_processed
 
 
