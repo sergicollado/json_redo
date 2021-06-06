@@ -6,13 +6,13 @@ class ProcessedDataRepositoryAbstract(metaclass=ABCMeta):
 
     @abstractmethod
     def append(self, index: int) -> None:
-        pass
+        """insert already processed data"""
     @abstractmethod
     def is_already_processed(self, index: int) ->bool:
-        pass
+        """check if is already processed index item"""
     @abstractmethod
     def append_invalid_item(self, index: int, data: dict)-> None:
-        pass
+        """insert invalid already processed data"""
     @abstractmethod
     def get_invalid_item(self, index: int) -> dict:
-        pass
+        """get and invalid item"""
