@@ -1,6 +1,6 @@
 from domain.notification_sender_abstract import NotificationSenderAbstract
 from domain.notification_types import NotificationType
-from infraestructure.message_client import MessageClient
+from infrastructure.message_client import MessageClient
 from domain.validators import PostNotificationValidator, SmsNotificationValidator, EmailNotificationValidator
 
 

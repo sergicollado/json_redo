@@ -1,9 +1,9 @@
 from domain.exceptions import InputDataError
 from domain.notification_sender_factory import NotificationSenderFactory
-from infraestructure.processed_data_repository import ProcessedDataRepository
+from infrastructure.processed_data_repository import ProcessedDataRepository
 import ijson
 from ijson.common import JSONError
-from infraestructure.message_client import MessageClient
+from infrastructure.message_client import MessageClient
 from domain.validators.email_notification_validator import EmailNotificationValidator
 from domain.validators.exceptions import BadParametersError
 from domain.validators.general_notification_validator import GeneralNotificationValidator

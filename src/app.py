@@ -1,7 +1,7 @@
 import urllib.request
 from application_layer.json_processor import JsonProcessor
-from infraestructure.message_client import MessageClient
-from infraestructure.processed_data_repository import ProcessedDataRepository
+from infrastructure.message_client import MessageClient
+from infrastructure.processed_data_repository import ProcessedDataRepository
 
 
 def main():

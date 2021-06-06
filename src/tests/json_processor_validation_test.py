@@ -1,7 +1,7 @@
 import pytest
-from infraestructure.message_client import MessageClient
+from infrastructure.message_client import MessageClient
 from application_layer.json_processor import JsonProcessor
-from infraestructure.processed_data_repository import ProcessedDataRepository
+from infrastructure.processed_data_repository import ProcessedDataRepository
 
 
 
@@ -19,14 +19,14 @@ def json_processor(processed_repository):
 
 @pytest.fixture
 def post_errors_input_json():
-    filename = 'src/tests/fixture_post_error.json'
+    filename = 'src/tests/fixtures/fixture_post_error.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
 
 @pytest.fixture
 def error_input_json():
-    filename = 'src/tests/fixture_with_error.json'
+    filename = 'src/tests/fixtures/fixture_with_error.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
@@ -34,7 +34,7 @@ def error_input_json():
 
 @pytest.fixture
 def no_type_input_json():
-    filename = 'src/tests/fixture_with_no_type_error.json'
+    filename = 'src/tests/fixtures/fixture_with_no_type_error.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()

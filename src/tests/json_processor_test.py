@@ -1,9 +1,9 @@
 import pytest
 from unittest.mock import Mock
 from domain.exceptions import InputDataError
-from infraestructure.message_client import MessageClient
+from infrastructure.message_client import MessageClient
 from application_layer.json_processor import JsonProcessor
-from infraestructure.processed_data_repository import ProcessedDataRepository
+from infrastructure.processed_data_repository import ProcessedDataRepository
 
 @pytest.fixture
 def json_processor():
@@ -13,7 +13,7 @@ def json_processor():
 
 @pytest.fixture
 def input_json():
-    filename = 'src/tests/fixture_base.json'
+    filename = 'src/tests/fixtures/fixture_base.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
@@ -21,7 +21,7 @@ def input_json():
 
 @pytest.fixture
 def error_input_json():
-    filename = 'src/tests/fixture_bad_format.json'
+    filename = 'src/tests/fixtures/fixture_bad_format.json'
     json_file = open(filename, "rb")
     yield json_file
 

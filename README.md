@@ -5,7 +5,7 @@
 
 - Python 3.8
 
-- This project use pipenv to manage the requeriments, check this link to install it:
+- This project use pipenv to manage the requirements, check this link to install it:
 https://pipenv-fork.readthedocs.io/en/latest/install.html#installing-pipenv
 
 - After that you can install python library packages:
@@ -35,7 +35,7 @@ Execute app.py
 ```python
 src                     # source code
 src/domain              # core domain
-src/infraestructure     # infraestructure layer
+src/infrastructure     # infrastructure layer
 src/application_layer   # application layer
 ```
 
@@ -73,8 +73,8 @@ src/domain/validators/exceptions.py                           6      1    83%
 src/domain/validators/general_notification_validator.py       6      0   100%
 src/domain/validators/post_notification_validator.py          6      0   100%
 src/domain/validators/sms_notification_validator.py           6      0   100%
-src/infraestructure/message_client.py                         8      0   100%
-src/infraestructure/processed_data_repository.py             14      0   100%
+src/infrastructure/message_client.py                         8      0   100%
+src/infrastructure/processed_data_repository.py             14      0   100%
 src/tests/__init__.py                                         0      0   100%
 src/tests/exceptions_validation_test.py                      15      0   100%
 src/tests/json_processor_replay_test.py                      52      0   100%

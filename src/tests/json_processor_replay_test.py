@@ -1,8 +1,8 @@
 import pytest
 from unittest.mock import Mock
-from infraestructure.message_client import MessageClient
+from infrastructure.message_client import MessageClient
 from application_layer.json_processor import JsonProcessor
-from infraestructure.processed_data_repository import ProcessedDataRepository
+from infrastructure.processed_data_repository import ProcessedDataRepository
 
 
 @pytest.fixture
@@ -23,7 +23,7 @@ def json_processor(message_client, processed_repository):
 
 @pytest.fixture
 def prepocessed_json():
-    filename = 'src/tests/fixture_base.json'
+    filename = 'src/tests/fixtures/fixture_base.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
@@ -31,7 +31,7 @@ def prepocessed_json():
 
 @pytest.fixture
 def to_process_json():
-    filename = 'src/tests/fixture_base_extended.json'
+    filename = 'src/tests/fixtures/fixture_base_extended.json'
     json_file = open(filename, "rb")
     yield json_file
     json_file.close()
