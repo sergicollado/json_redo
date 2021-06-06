@@ -1,0 +1,23 @@
+[
+    {
+    "name": "John Doe 1",
+    "email": null,
+    "phone": null,
+    "url": null,
+    "type": "post"
+    },
+    {
+    "name": "John Doe 2",
+    "email": "doe@example.com",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+    },
+    {
+    "name": "John Doe 3",
+    "email": null,
+    "phone": "+34692018264",
+    "url": null,
+    "type": "sms"
+    }
+]

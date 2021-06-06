@@ -8,17 +8,17 @@ class JsonProcessor:
         self.processed_data_repository = processed_data_repository
 
     def process(self, json):
-        for index, entry_log in enumerate(ijson.items(json, 'item')):
-            self.process_log(index, entry_log)
+        for index, log_to_notify in enumerate(ijson.items(json, 'item')):
+            self.send_notification(index, log_to_notify)
 
-    def process_log(self, index: int, entry_log) -> None:
+    def send_notification(self, index: int, log_to_notify) -> None:
         if self.processed_data_repository.is_already_processed(index):
             print(f'ALREADY PROCESSED {index}')
             return
         print(f'TO PROCESS {index}')
-        self.process_post(entry_log)
-        self.process_sms(entry_log)
-        self.process_email(entry_log)
+        self.process_post(log_to_notify)
+        self.process_sms(log_to_notify)
+        self.process_email(log_to_notify)
         self.processed_data_repository.append(index)
 
     def process_post(self, data: dict) -> None:
