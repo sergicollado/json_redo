@@ -1,16 +1,22 @@
 import pytest
-from unittest.mock import Mock
+from unittest.mock import MagicMock, Mock
 from message_client import MessageClient
 from json_processor import JsonProcessor
 from validators.exceptions import BadParametersError
 from processed_data_repository import ProcessedDataRepository
 from validators import NotificationValidator
 
+
 @pytest.fixture
-def json_processor():
+def processed_repository():
     repository = ProcessedDataRepository()
-    yield JsonProcessor(MessageClient, repository)
+    yield repository
     repository.data.clear()
+
+@pytest.fixture
+def json_processor(processed_repository):
+    return JsonProcessor(MessageClient, processed_repository)
+
 
 @pytest.fixture
 def input_json():
@@ -20,6 +26,8 @@ def input_json():
     json_file.close()
 
 
-def test_should_raise_error_when_send_post_message_without_proper_params(input_json, json_processor):
-    with pytest.raises(BadParametersError):
-        json_processor.process(input_json)
+def test_should_save_invalid_items(input_json, json_processor, processed_repository):
+    json_processor.process(input_json)
+    expected_invalid_item_indices = [0,2]
+    for index in expected_invalid_item_indices:
+        assert processed_repository.get_invalid_item(index)

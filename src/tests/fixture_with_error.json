@@ -1,0 +1,44 @@
+[
+  {
+    "name": "post without url",
+    "email": null,
+    "phone": null,
+    "url": "",
+    "type": "post"
+  },
+  {
+    "name": "Email without email",
+    "email": "",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+  },
+  {
+    "name": "Sms without Phone",
+    "email": null,
+    "phone": "",
+    "url": null,
+    "type": "sms"
+  },
+  {
+    "name": "John Doe 4",
+    "email": null,
+    "phone": null,
+    "url": "http: //example.com/push/4",
+    "type": "post"
+  },
+  {
+    "name": "John Doe 5",
+    "email": "doe@example.com5",
+    "phone": null,
+    "url": "http: //example.com",
+    "type": "email"
+  },
+  {
+    "name": "John Doe 6",
+    "email": null,
+    "phone": "+346920182646",
+    "url": null,
+    "type": "sms"
+  }
+]

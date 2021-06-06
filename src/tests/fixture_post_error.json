@@ -14,10 +14,10 @@
     "type": "email"
     },
     {
-    "name": "John Doe 3",
+    "name": null,
     "email": null,
-    "phone": "+34692018264",
+    "phone": null,
     "url": null,
-    "type": "sms"
+    "type": "post"
     }
 ]
